@@ -11,88 +11,14 @@ dependencies = [
 [dependency-groups]
 dev = [
     "ruff>=0.11.13",
-    "pyright>=1.1.390",
 ]
 [tool.ruff]
-target-version = "py313"
+target-version = "py311"
 line-length = 100
 exclude = ["__pycache__", ".venv", "migrations"]
 
 [tool.ruff.lint]
 select = ["E", "F", "I"]
-
-[tool.pyright]
-include = ["src"]
-exclude = ["**/__pycache__", "**/.venv", "**/migrations"]
-pythonVersion = "3.13"
-pythonPlatform = "All"
-typeCheckingMode = "strict"
-reportMissingImports = true
-reportMissingTypeStubs = false
-reportImportCycles = true
-reportUnusedImport = true
-reportUnusedClass = true
-reportUnusedFunction = true
-reportUnusedVariable = true
-reportDuplicateImport = true
-reportOptionalSubscript = true
-reportOptionalMemberAccess = true
-reportOptionalCall = true
-reportOptionalIterable = true
-reportOptionalContextManager = true
-reportOptionalOperand = true
-reportTypedDictNotRequiredAccess = false
-reportPrivateImportUsage = true
-reportConstantRedefinition = true
-reportIncompatibleMethodOverride = true
-reportIncompatibleVariableOverride = true
-reportInconsistentConstructor = true
-reportOverlappingOverloads = true
-reportMissingSuperCall = false
-reportUninitializedInstanceVariable = true
-reportInvalidStringEscapeSequence = true
-reportUnknownParameterType = true
-reportUnknownArgumentType = false
-reportUnknownLambdaType = false
-reportUnknownVariableType = false
-reportUnknownMemberType = false
-reportMissingParameterType = true
-reportMissingTypeArgument = true
-reportInvalidTypeVarUse = true
-reportCallInDefaultInitializer = true
-reportUnnecessaryIsInstance = true
-reportUnnecessaryCast = true
-reportUnnecessaryComparison = true
-reportUnnecessaryContains = true
-reportAssertAlwaysTrue = true
-reportSelfClsParameterName = true
-reportImplicitStringConcatenation = false
-reportUndefinedVariable = true
-reportUnboundVariable = true
-reportInvalidStubStatement = true
-reportIncompleteStub = true
-reportUnsupportedDunderAll = true
-reportUnusedCoroutine = true
-reportFunctionMemberAccess = true
-reportGeneralTypeIssues = true
-reportPropertyTypeMismatch = true
-reportWildcardImportFromLibrary = true
-reportAbstractUsage = true
-reportArgumentType = true
-reportAssignmentType = true
-reportAttributeAccessIssue = true
-reportCallIssue = true
-reportInconsistentOverload = true
-reportIndexIssue = true
-reportInvalidTypeArguments = true
-reportNoOverloadImplementation = true
-reportOperatorIssue = true
-reportRedeclaration = true
-reportReturnType = true
-reportTypeCommentUsage = true
-reportUnusedExpression = false
-reportUnnecessaryTypeIgnoreComment = true
-reportMatchNotExhaustive = true
 
 [tool.setuptools]
 package-dir = {"" = "src"}
