@@ -1,4 +1,9 @@
 {
   "cSpell.words": ["fastapi"],
   "editor.formatOnSave": true,
+  "python.defaultInterpreterPath": "./backend/.venv/bin/python",
+  "python.terminal.activateEnvironment": true,
+  "python.analysis.extraPaths": ["./backend/src"],
+  "pyright.include": ["backend/src"],
+  "pyright.exclude": ["backend/**/__pycache__", "backend/**/.venv"]
 }
