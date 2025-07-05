@@ -10,7 +10,7 @@ The simulator does **not** perform any signal generation or strategy logic — i
 
 ### Core Use Cases
 
-- Backtest pre-generated orders against historical OHLCV data
+- Backtest pre-generated orders against historical OHLCV data.
 - Benchmark strategies in a consistent and repeatable simulation environment
 - Integrate with internal strategy labs or external users via API
 
