@@ -21,6 +21,8 @@ exclude = ["__pycache__", ".venv", "migrations"]
 [tool.ruff.lint]
 select = ["E", "F", "I"]
 
+
+
 [tool.setuptools]
 package-dir = {"" = "src"}
 packages = ["api", "core", "models", "services"]
