@@ -1,4 +1,3 @@
-
 ## **Trading Simulator**
 
 ### Overview
@@ -12,23 +11,20 @@ The simulator does **not** perform any signal generation or strategy logic — i
 ### Core Use Cases
 
 - Backtest pre-generated orders against historical OHLCV data
-    
 - Benchmark strategies in a consistent and repeatable simulation environment
-    
 - Integrate with internal strategy labs or external users via API
-    
 
 ---
 
 ### 🧠 Key Concepts
 
-|Concept|Description|
-|---|---|
-|**Order**|A structured instruction to enter a trade at a specific time and price, with associated stop loss and take profit levels|
-|**Execution**|The act of simulating how the order would have been filled based on historical candle data|
-|**Timeframe**|Candle interval used for simulation (e.g., 15m, 1h)|
-|**Execution Window**|Time period over which the simulator will attempt to execute the orders|
-|**Fill Logic**|Deterministic rule set to simulate MKT or LMT order fills, including SL/TP triggers|
+| Concept              | Description                                                                                                              |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| **Order**            | A structured instruction to enter a trade at a specific time and price, with associated stop loss and take profit levels |
+| **Execution**        | The act of simulating how the order would have been filled based on historical candle data                               |
+| **Timeframe**        | Candle interval used for simulation (e.g., 15m, 1h)                                                                      |
+| **Execution Window** | Time period over which the simulator will attempt to execute the orders                                                  |
+| **Fill Logic**       | Deterministic rule set to simulate MKT or LMT order fills, including SL/TP triggers                                      |
 
 ---
 
@@ -45,7 +41,6 @@ The simulator does **not** perform any signal generation or strategy logic — i
 | Single-symbol per simulation run      |
 | Simple REST API                       |
 | Equity curve / trade log in output    |
-
 
 ---
 
@@ -109,12 +104,12 @@ The simulator does **not** perform any signal generation or strategy logic — i
 
 ## 🔄 Fill Logic (Execution Model)
 
-|Order Type|Fill Rule|
-|---|---|
-|**MKT**|Entry filled at the open price of `entry_time` bar|
-|**LMT**|Entry fills if price touches `entry_price` during or after `entry_time`|
-|**TP / SL**|Evaluated once position is open, in candle order. First touch wins (unless you model more complex intra-candle logic)|
-|**Unfilled Orders**|Discarded if entry conditions are never met within the simulation window|
+| Order Type          | Fill Rule                                                                                                             |
+| ------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| **MKT**             | Entry filled at the open price of `entry_time` bar                                                                    |
+| **LMT**             | Entry fills if price touches `entry_price` during or after `entry_time`                                               |
+| **TP / SL**         | Evaluated once position is open, in candle order. First touch wins (unless you model more complex intra-candle logic) |
+| **Unfilled Orders** | Discarded if entry conditions are never met within the simulation window                                              |
 
 ---
 
@@ -125,12 +120,10 @@ The simulator does **not** perform any signal generation or strategy logic — i
 **Request:**
 
 - Accepts JSON as per order schema
-    
 
 **Response:**
 
 - Returns structured execution results (as above)
-    
 
 **Example Curl:**
 
@@ -144,14 +137,14 @@ curl -X POST http://localhost:8000/simulate \
 
 ## 🧰 Future Extensions (Post-MVP)
 
-|Feature|Notes|
-|---|---|
-|Slippage modeling|Random or fixed per symbol|
-|Fees and commissions|Per trade or per volume|
-|Multi-symbol simulation|Requires state partitioning|
-|Bar-by-bar simulation|For LSTM-like step-through or walk-forward|
-|Tick-level simulation|Advanced, if data available|
-|Interactive UI|To visualize equity curve, trades on chart|
-|Async / Job Queue|For large-scale batch simulations|
+| Feature                 | Notes                                      |
+| ----------------------- | ------------------------------------------ |
+| Slippage modeling       | Random or fixed per symbol                 |
+| Fees and commissions    | Per trade or per volume                    |
+| Multi-symbol simulation | Requires state partitioning                |
+| Bar-by-bar simulation   | For LSTM-like step-through or walk-forward |
+| Tick-level simulation   | Advanced, if data available                |
+| Interactive UI          | To visualize equity curve, trades on chart |
+| Async / Job Queue       | For large-scale batch simulations          |
 
 ---
