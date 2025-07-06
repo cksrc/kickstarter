@@ -1,2 +1,6 @@
 .DS_Store
 backend/documentation/.obsidian/*
+backend/src/environments/keys/*
+!backend/src/environments/keys/.gitkeep
+backend/src/environments/*
+!backend/src/environments/.env.sample
