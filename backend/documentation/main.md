@@ -218,7 +218,7 @@ backend/
 **Example Curl:**
 
 ```bash
-curl -X POST http://localhost:8000/simulate \
+curl -X POST http://localhost:8002/simulate \
      -H "Content-Type: application/json" \
      -d @orders.json
 ```
@@ -245,9 +245,9 @@ uv sync
 uv run fastapi dev src/main.py
 
 # The API will be available at:
-# - Main API: http://localhost:8000
-# - Interactive docs: http://localhost:8000/docs
-# - OpenAPI spec: http://localhost:8000/openapi.json
+# - Main API: http://localhost:8002
+# - Interactive docs: http://localhost:8002/docs
+# - OpenAPI spec: http://localhost:8002/openapi.json
 ```
 
 ### Development Commands

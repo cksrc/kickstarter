@@ -12,8 +12,8 @@ uv sync
 uv run fastapi dev src/main.py
 
 # Access the API
-# - Main API: http://localhost:8000
-# - Interactive docs: http://localhost:8000/docs
+# - Main API: http://localhost:8002
+# - Interactive docs: http://localhost:8002/docs
 ```
 
 ## 📊 Current Status
